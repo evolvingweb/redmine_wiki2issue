@@ -1,0 +1,20 @@
+= Wiki2issue
+
+Evolving Web
+
+evolvingweb.ca
+
+Last edit: Fri Dec 23 15:30:15 EST 2011
+
+
+This macro lets you create issues while writing wiki pages (intended for wiki pages comprising notes or specs, but use it how you will).
+
+== Usage
+
+{{issue(Issue subject, which can include commas [, project])}}
+
+When first rendered, this simply creates a link to an issue creation page where the subject is prefilled. However, once the issue has been creates, this link will point at the issue itself, even if the subject is changed. If the project is not specified, the project of the current wiki page is assumed. 
+
+== Problems
+
+The record tying and issue to an {{issue...}} macro is created on the first render of the wiki page after the creation of the issue. Thus if an issue is renamed before the wiki page is rendered again, then the link on the wiki page will be broken.
