@@ -52,7 +52,7 @@ class WikiToIssueMacros
           }
         }
 
-        link = scope["link_to"].call ("Issue #____" , url_args, {:class => "new"}) 
+        link = scope["link_to"].call("Issue #____" , url_args, {:class => "new"}) 
         link << ": " + subject
       end
     end
