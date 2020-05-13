@@ -1,7 +1,7 @@
 require 'redmine'
 require File.dirname(__FILE__) + '/lib/wiki_to_issue_macros.rb'
 
-Redmine::Plugin.register :redmine_ew_mod do
+Redmine::Plugin.register :redmine_wiki2issue do
   name 'Wiki2issue macro'
   author 'Evolving Web Inc'
   description 'Macro to create issues from within wiki pages.'
