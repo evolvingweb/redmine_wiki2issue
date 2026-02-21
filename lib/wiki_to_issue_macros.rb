@@ -1,9 +1,6 @@
 require 'redmine'
-require File.dirname(__FILE__) + '/../app/models/wiki_to_issue_ref.rb'
 
 class WikiToIssueMacros
-  unloadable
-
   def self.find_or_create_issue(object, args, scope = nil, switch = nil) 
     raise  "The correct usage is {{ issue(subject, [project])) }}" unless args.length >= 1
 
