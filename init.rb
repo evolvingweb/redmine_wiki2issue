@@ -1,17 +1,13 @@
 require 'redmine'
 
-# Tell Zeitwerk to ignore this plugin's lib directory
-plugin_lib = File.join(File.dirname(__FILE__), 'lib')
-Rails.autoloaders.each { |loader| loader.ignore(plugin_lib) }
-
-# Require plugin files
-require File.join(plugin_lib, 'wiki_to_issue_macros')
-
+# R7: no loader.ignore / manual require — WikiToIssueMacros (lib/wiki_to_issue_macros.rb)
+# autoloads when the macro below runs (Zeitwerk). refs #108530.
 Redmine::Plugin.register :redmine_wiki2issue do
   name 'Wiki2issue macro'
   author 'Evolving Web Inc'
   description 'Macro to create issues from within wiki pages.'
-  version '6.0.0'
+  version '7.0.0'
+  requires_redmine version_or_higher: '7.0.0'
   author_url 'http://evolvingweb.ca'
 
   Redmine::WikiFormatting::Macros.register do
